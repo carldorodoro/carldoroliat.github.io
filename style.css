@@ -53,8 +53,10 @@ html, body, .main, .sidebar, .project-card {
 
 .layout {
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: minmax(0, 1fr) 320px;
   min-height: 100vh;
+}
+
 }
 
 .main {
