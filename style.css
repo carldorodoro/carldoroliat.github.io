@@ -3,7 +3,7 @@
    ============================= */
 
 :root {
-  --bg-main: #f6f2ea;
+  --bg-main: #ffffff;          /* ✅ pure white */
   --bg-card: #ffffff;
   --text-main: #1f2933;
   --text-muted: #5b6670;
@@ -30,12 +30,16 @@ html[data-theme="dark"] {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%; /* ✅ 16px baseline */
+}
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background-color: var(--bg-main);
   color: var(--text-main);
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 1rem; /* ✅ consistent across GitHub Pages */
 }
 
 /* Smooth theme transition */
@@ -61,9 +65,9 @@ html, body, .main, .sidebar, .project-card {
   padding: 4rem 2.5rem;
   border-left: 1px solid var(--border-soft);
 
-  display: flex;                 /* 🔑 critical fix */
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;       /* 🔑 prevents stretching */
+  align-items: flex-start;
 }
 
 /* =============================
@@ -84,24 +88,23 @@ html, body, .main, .sidebar, .project-card {
   border-radius: 20px;
   background-color: var(--bg-card);
   border: 1px solid var(--border-soft);
-  overflow: hidden; /* 🔑 keeps image inside rounded box */
+  overflow: hidden;
 }
 
 .hero-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 🔑 keeps proportions */
+  object-fit: cover;
 }
 
-
 .hero-text h1 {
-  font-size: 3.4rem;
+  font-size: 3.2rem; /* slightly reduced */
   font-weight: 800;
   line-height: 1.15;
 }
 
 .hero-text p {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
 }
 
@@ -110,12 +113,12 @@ html, body, .main, .sidebar, .project-card {
    ============================= */
 
 .content-section {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   margin-bottom: 3rem;
 }
 
 .content-section h2 {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   color: var(--accent);
   margin-bottom: 0.8rem;
 }
@@ -125,13 +128,13 @@ html, body, .main, .sidebar, .project-card {
    ============================= */
 
 .sidebar-section {
-  font-size: 1.05rem;
+  font-size: 1rem;
   margin-bottom: 2.5rem;
   width: 100%;
 }
 
 .sidebar-section h3 {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   color: var(--accent);
   margin-bottom: 0.8rem;
 }
@@ -143,10 +146,10 @@ html, body, .main, .sidebar, .project-card {
 .sidebar-card {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
 
-  padding: 0.55rem 0.9rem;   /* ⬆ slightly bigger */
-  font-size: 0.95rem;        /* ⬆ readable */
+  padding: 0.65rem 1rem;
+  font-size: 1rem;
   line-height: 1.3;
 
   border-radius: 10px;
@@ -155,7 +158,7 @@ html, body, .main, .sidebar, .project-card {
   color: var(--text-main);
 
   cursor: pointer;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.7rem;
 
   width: auto;
   align-self: flex-start;
@@ -173,19 +176,13 @@ html, body, .main, .sidebar, .project-card {
   justify-content: center;
 }
 
-
-/* Align sidebar content with About Me */
-.sidebar {
-  padding-top: 4rem;
-}
-
+/* Align sidebar with About Me */
 .sidebar-section:first-of-type {
-  margin-top: 8rem; /* tuned to hero height */
+  margin-top: 8rem;
 }
-
 
 /* =============================
-   EXPERIENCE GRID (2x2, NO CARDS)
+   EXPERIENCE GRID
    ============================= */
 
 .experience-grid {
@@ -195,11 +192,11 @@ html, body, .main, .sidebar, .project-card {
 }
 
 .experience-item strong {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 
 .experience-item span {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
 }
 
@@ -217,7 +214,7 @@ html, body, .main, .sidebar, .project-card {
   background: var(--bg-card);
   border: 1px solid var(--border-soft);
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1.4rem;
 }
 
 /* =============================
@@ -249,28 +246,6 @@ html, body, .main, .sidebar, .project-card {
 }
 
 /* =============================
-   RESPONSIVE
-   ============================= */
-
-@media (max-width: 900px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-
-  .main,
-  .sidebar {
-    padding: 3rem 2rem;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-text h1 {
-    font-size: 2.6rem;
-  }
-}
-/* =============================
    FOOTER
    ============================= */
 
@@ -289,8 +264,7 @@ html, body, .main, .sidebar, .project-card {
 }
 
 .footer-content p {
-  font-size: 1rem;
-  color: var(--text-main);
+  font-size: 0.95rem;
 }
 
 .footer-content a {
@@ -304,13 +278,33 @@ html, body, .main, .sidebar, .project-card {
 
 .footer-note {
   margin-top: 1.8rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   text-align: center;
 }
 
-/* Responsive */
+/* =============================
+   RESPONSIVE
+   ============================= */
+
 @media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .main,
+  .sidebar {
+    padding: 3rem 2rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }
+
   .footer {
     padding: 2rem;
   }
@@ -321,6 +315,3 @@ html, body, .main, .sidebar, .project-card {
     gap: 1rem;
   }
 }
-
-
-
